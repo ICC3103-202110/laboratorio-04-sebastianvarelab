@@ -13,16 +13,7 @@ function update(msg,counter){
     }
 }
 counter_=0
-console.log (("Count :"), (update(msg,counter_)))
-console.log("(+) (-)")
-console.log(" ")
-console.log("(q) for quit")
 var prompt= require ("prompt-sync")();
-var msg= prompt ("What would you do? ")
-counter_=update(msg,counter_)
-console.clear()
-
-
 function app (counter){
     console.log (("Count :"), (view(counter_)))
     console.log("(+) (-)")
@@ -44,9 +35,7 @@ function app (counter){
     
      
 }
-
-
-console.log(app(counter_))
+app(0)
 
 
   
