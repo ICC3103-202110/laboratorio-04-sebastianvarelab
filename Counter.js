@@ -24,7 +24,7 @@ console.clear()
 
 
 function app (counter){
-    console.log (("Count :"), (update(msg,counter_)))
+    console.log (("Count :"), (view(counter_)))
     console.log("(+) (-)")
     console.log(" ")
     console.log("(q) for quit")
@@ -33,7 +33,9 @@ function app (counter){
     while(true){
         console.clear()
         if(msg=="q"){
-            return false
+            false
+            a="end"
+            return a
         }
         else{ 
             return app(counter)
