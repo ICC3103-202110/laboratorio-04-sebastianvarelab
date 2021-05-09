@@ -3,45 +3,51 @@ function view(counter){
 }
 function update(msg,counter){
     if (msg=="+"){
-        return counter +1
+        return counter+1
     }
     if (msg=="-"){
-        return counter -1
+        return counter-1
     }
     else{
         return counter
     }
 }
-function app (counter){
-const currentView=view(counter)
+counter_=0
+console.log (("Count :"), (update(msg,counter_)))
+console.log("(+) (-)")
+console.log(" ")
+console.log("(q) for quit")
+var prompt= require ("prompt-sync")();
+var msg= prompt ("What would you do? ")
+counter_=update(msg,counter_)
 console.clear()
 
-return counter
-}
 
-
-
-counter=0
-app(0)
-var prompt= require ("prompt-sync")();  
-while(true){
-    console.log (("Count :"), (view(counter)))
+function app (counter){
+    console.log (("Count :"), (update(msg,counter_)))
     console.log("(+) (-)")
     console.log(" ")
     console.log("(q) for quit")
-    var msg= prompt ("What would yo do? ")
-    console.clear()
-    if(msg=="q"){
-        return false
+    var msg= prompt("What woul you do? :")
+    counter_=update(msg,counter_)
+    while(true){
+        console.clear()
+        if(msg=="q"){
+            return false
+        }
+        else{ 
+            return app(counter)
+        }
     }
-    else{ 
-        console.log (("Count :"), (view(update(msg,counter))))
-        console.log("(+) (-)")
-        console.log(" ")
-        console.log("(q) for quit")
-        var msg= prompt ("What would yo do? ")
-        return true
-    }
+    
+     
 }
+
+
+console.log(app(counter_))
+
+
+  
+
 
 
