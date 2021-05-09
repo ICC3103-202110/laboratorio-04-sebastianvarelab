@@ -12,12 +12,36 @@ function update(msg,counter){
         return counter
     }
 }
+function app (counter){
+const currentView=view(counter)
+console.clear()
+
+return counter
+}
+
+
+
 counter=0
-console.log ("Count")
-console.log("(+) (-)")
-console.log(" ")
-console.log("(q) for quit")
-var prompt= require ("prompt-sync")();
-var msg= prompt ("What would yo do? ") 
-console.log(update(msg,counter))
+app(0)
+var prompt= require ("prompt-sync")();  
+while(true){
+    console.log (("Count :"), (view(counter)))
+    console.log("(+) (-)")
+    console.log(" ")
+    console.log("(q) for quit")
+    var msg= prompt ("What would yo do? ")
+    console.clear()
+    if(msg=="q"){
+        return false
+    }
+    else{ 
+        console.log (("Count :"), (view(update(msg,counter))))
+        console.log("(+) (-)")
+        console.log(" ")
+        console.log("(q) for quit")
+        var msg= prompt ("What would yo do? ")
+        return true
+    }
+}
+
 
